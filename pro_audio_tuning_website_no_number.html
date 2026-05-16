@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro Audio Tuning | Practical Sound Engineering</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+    body{background:#080808;color:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}.container{width:92%;max-width:1150px;margin:auto}
+    header{padding:18px 0;border-bottom:1px solid #222;position:sticky;top:0;background:#080808;z-index:10}
+    nav{display:flex;justify-content:space-between;align-items:center}.logo{font-weight:900;font-size:23px;color:#f6c343}
+    .nav a{margin-left:16px;color:#ddd}.btn{display:inline-block;background:#f6c343;color:#111;padding:12px 20px;border-radius:999px;font-weight:800;margin-top:14px}
+    .btn2{background:#1b1b1b;color:#fff;border:1px solid #333}
+    .hero{padding:70px 0;background:radial-gradient(circle at top right,rgba(246,195,67,.24),transparent 30%),linear-gradient(135deg,#080808,#161616)}
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    h1{font-size:clamp(36px,7vw,68px);line-height:1.03;margin:15px 0}.tag{border:1px solid #f6c343;color:#f6c343;padding:7px 12px;border-radius:999px;font-size:13px}
+    p{color:#ccc}.card{background:#121212;border:1px solid #262626;border-radius:22px;padding:24px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+    section{padding:56px 0}h2{font-size:34px;margin-bottom:10px}.sub{margin-bottom:26px;color:#aaa}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card h3{color:#f6c343;margin-bottom:8px}
+    ul{list-style:none;margin-top:12px}li{padding:8px 0;border-bottom:1px solid #242424;color:#ddd}
+    input{width:100%;padding:12px;margin:8px 0;border-radius:12px;border:1px solid #333;background:#090909;color:#fff}
+    button{border:0;cursor:pointer}.result{margin-top:12px;padding:12px;background:#1b1b1b;color:#f6c343;border-radius:12px;font-weight:800;min-height:46px}
+    .locked{background:linear-gradient(135deg,rgba(246,195,67,.16),rgba(255,255,255,.03));border:1px solid #3a3215}
+    footer{text-align:center;color:#aaa;border-top:1px solid #222;padding:25px 0}
+    @media(max-width:850px){.grid,.cards{grid-template-columns:1fr}.nav{display:none}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">PRO AUDIO TUNING</div>
+      <div class="nav">
+        <a href="#course">Course</a><a href="#tools">Free Tools</a><a href="#access">Access</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container grid">
+    <div>
+      <span class="tag">Marathi / Hindi Practical Sound Engineering</span>
+      <h1>DBX DriveRack 260 Practical Masterclass</h1>
+      <p>Real field tuning शिका — crossover, limiter, delay alignment, PEQ, RTA tuning, bass setup आणि 4 Bass 8 Top mapping simple Marathi/Hindi explanation मध्ये.</p>
+      <a class="btn" href="#access">Get Course Access</a>
+      <a class="btn btn2" href="#tools">Use Free Tools</a>
+    </div>
+    <div class="card">
+      <h3>Course Includes</h3>
+      <ul>
+        <li>✅ DBX 260 start to end setup</li>
+        <li>✅ Limiter voltage calculation</li>
+        <li>✅ Delay alignment practical</li>
+        <li>✅ PEQ + RTA tuning basics</li>
+        <li>✅ Bass kick + vibration tuning</li>
+        <li>✅ Real Indian sound setup examples</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="course">
+  <div class="container">
+    <h2>What You Will Learn</h2>
+    <p class="sub">Beginner पासून professional tuning mindset पर्यंत.</p>
+    <div class="cards">
+      <div class="card"><h3>Crossover Setup</h3><p>Bass, low-mid, mid-high आणि HF frequency planning.</p></div>
+      <div class="card"><h3>Limiter Safety</h3><p>Speaker watt/ohm वरून voltage target काढणे.</p></div>
+      <div class="card"><h3>Delay Alignment</h3><p>Distance वरून ms delay आणि bass-top alignment.</p></div>
+      <div class="card"><h3>PEQ Tuning</h3><p>Boom, harshness, vocal clarity आणि punch control.</p></div>
+      <div class="card"><h3>RTA Workflow</h3><p>Mic placement, pink noise आणि practical correction.</p></div>
+      <div class="card"><h3>Field Problems</h3><p>Clip, feedback, muddy sound, bass cancel mistakes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="container">
+    <h2>Free Audio Tools</h2>
+    <p class="sub">हे tools लोकांना site वर परत आणतील.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Limiter Voltage Calculator</h3>
+        <input id="watts" type="number" placeholder="Watt e.g. 4000">
+        <input id="ohms" type="number" placeholder="Ohm e.g. 4">
+        <button class="btn" onclick="calcLimiter()">Calculate</button>
+        <div class="result" id="limiterResult">Result will show here</div>
+      </div>
+      <div class="card">
+        <h3>Distance to Delay</h3>
+        <input id="meters" type="number" placeholder="Distance meter e.g. 3">
+        <button class="btn" onclick="calcDelay()">Calculate</button>
+        <div class="result" id="delayResult">Result will show here</div>
+      </div>
+      <div class="card">
+        <h3>Volt to dBu</h3>
+        <input id="volt" type="number" placeholder="Volt e.g. 180">
+        <button class="btn" onclick="calcDbu()">Calculate</button>
+        <div class="result" id="dbuResult">Result will show here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="container">
+    <div class="card locked">
+      <h2>Premium Course Access</h2>
+      <p>Payment hidden ठेवण्यासाठी website वर price/QR दाखवू नका. Button WhatsApp, Razorpay किंवा locked checkout ला connect करा.</p>
+      <a class="btn" href="#">Get Course Access</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Pro Audio Tuning. Practical sound engineering education.</footer>
+
+<script>
+function calcLimiter(){
+  const w=parseFloat(document.getElementById('watts').value);
+  const o=parseFloat(document.getElementById('ohms').value);
+  const out=document.getElementById('limiterResult');
+  if(!w||!o){out.innerText='Please enter watt and ohm';return}
+  out.innerText=Math.sqrt(w*o).toFixed(2)+' V RMS limiter target';
+}
+function calcDelay(){
+  const m=parseFloat(document.getElementById('meters').value);
+  const out=document.getElementById('delayResult');
+  if(!m){out.innerText='Please enter distance';return}
+  out.innerText=(m*2.91).toFixed(2)+' ms delay approx';
+}
+function calcDbu(){
+  const v=parseFloat(document.getElementById('volt').value);
+  const out=document.getElementById('dbuResult');
+  if(!v){out.innerText='Please enter voltage';return}
+  out.innerText=(20*Math.log10(v/0.775)).toFixed(2)+' dBu';
+}
+</script>
+</body>
+</html>
