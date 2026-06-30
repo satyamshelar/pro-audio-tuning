@@ -23,8 +23,7 @@ jobs:
       - name: Build
         shell: cmd
         run: |
-          qmake OpenSoundMeter.pro CONFIG+=release
-          mingw32-make -j2
+         qmake OpenSoundMeter.pro CONFIG+=release QMAKE_LIBS+=-lole32
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
