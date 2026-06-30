@@ -597,7 +597,7 @@ DISTFILES += \
     style.astylerc
 
 ICON = icons/white.icns
-win32:RC_ICONS = icons/white.ico
+#win32:RC_ICONS = icons/white.ico
 
 
 pvs_studio.target = pvs
