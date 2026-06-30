@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Sound Captain Tuning Lab Pro
+Comment=FFT based application for tuning sound systems.
+Exec=SoundCaptainTuningLabPro
+Icon=white
+Categories=AudioVideo;
