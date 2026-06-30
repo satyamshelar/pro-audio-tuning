@@ -25,9 +25,12 @@ jobs:
         run: |
          qmake OpenSoundMeter.pro CONFIG+=release QMAKE_LIBS+=-lole32
          mingw32-make -j2
+             mkdir package
+         copy release\*.exe package\
+         windeployqt package\*.exe
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: SoundCaptain-Windows
-          path: '**/*.exe'
+          path: package
