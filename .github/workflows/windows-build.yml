@@ -1,0 +1,33 @@
+name: Windows EXE Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '5.15.2'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_mingw81'
+
+      - name: Build
+        shell: cmd
+        run: |
+          qmake OpenSoundMeter.pro CONFIG+=release
+          mingw32-make -j2
+
+      - name: Upload EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: SoundCaptain-Windows
+          path: release
