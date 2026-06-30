@@ -54,7 +54,7 @@ Popup {
     }
 
     function check (openonavailable) {
-        request('http://api.opensoundmeter.com/check/' + Qt.platform.os, function (o) {
+        request('https://www.instagram.com/soundcaptain_95?igsh=MThqbnN5NjUwYmJqdQ==' + Qt.platform.os, function (o) {
 
             if (o.readyState !== 4) { return; }
 

@@ -29,6 +29,35 @@ import "menu" as Menu
 
 ApplicationWindow {
     id:applicationWindow
+    property bool licenseOk: false
+property string firebaseApiKey: "AIzaSyD1RvAb0dhPbMFnXAJwGYm3blcnpBI_ZM4"
+property string firebaseProjectId: "sound-captain-a57ba"
+function checkLicense(key) {
+    var url = "https://firestore.googleapis.com/v1/projects/" 
+            + firebaseProjectId 
+            + "/databases/(default)/documents/licenses/" 
+            + key 
+            + "?key=" + firebaseApiKey
+
+    var xhr = new XMLHttpRequest()
+    xhr.open("GET", url)
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                var data = JSON.parse(xhr.responseText)
+                if (data.fields && data.fields.active && data.fields.active.booleanValue === true) {
+                    licenseOk = true
+                    licensePanel.visible = false
+                } else {
+                    licenseMsg.text = "Invalid license key"
+                }
+            } else {
+                licenseMsg.text = "License not found"
+            }
+        }
+    }
+    xhr.send()
+}
 
     property alias properiesbar: bottomtab
     property alias charts: charts
@@ -226,5 +255,39 @@ ApplicationWindow {
                 message.showError(qsTr("could not open the file"));
             }
         }
+    }    Rectangle {
+        id: licensePanel
+        anchors.fill: parent
+        color: "#CC000000"
+        visible: !licenseOk
+        z: 9999
+
+        Column {
+            anchors.centerIn: parent
+            spacing: 10
+
+            Text {
+                text: "Sound Captain License"
+                color: "white"
+                font.pixelSize: 24
+            }
+
+            TextField {
+                id: licenseKey
+                width: 300
+                placeholderText: "Enter License Key"
+            }
+
+            Button {
+                text: "Activate"
+                onClicked: checkLicense(licenseKey.text)
+            }
+
+            Text {
+                id: licenseMsg
+                color: "red"
+            }
+        }
     }
 }
+

@@ -72,7 +72,7 @@ Popup {
                         Layout.fillWidth: true
                         textFormat: Text.RichText
                         text: qsTr(
-                                "<a style='color:%1' href=\"https://opensoundmeter.com\">https://opensoundmeter.com</a><br/><br/>" +
+                                "<a style='color:%1' href=\"https://www.instagram.com/soundcaptain_95?igsh=MThqbnN5NjUwYmJqdQ==\">https://opensoundmeter.com</a><br/><br/>" +
                                 "Copyright 2017 — %2  Pavel Smokotnin. <br/>" +
                                 "License: " +
                                 '<a style="color:%1" href="https://raw.githubusercontent.com/psmokotnin/osm/master/LICENSE">GPL v3.0</a>'
@@ -93,11 +93,11 @@ Popup {
             RowLayout {
                 Label {
                     text: qsTr(
-                               "<a style='color:%1' href=\"https://opensoundmeter.com/about#donate\">donate</a><br/><br/>" +
-                               "<a style='color:%1' href=\"https://opensoundmeter.com/support\">user manual</a><br/>" +
-                               "<a style='color:%1' href=\"https://opensoundmeter.com/consulting\">consulting</a><br/>" +
-                               "<a style='color:%1' href=\"https://opensoundmeter.com/training\">trainings</a><br/>" +
-                               "<a style='color:%1' href=\"https://www.facebook.com/opensoundmeter/\">community</a><br/>"
+                               "<a style='color:%1' href=\"https://www.instagram.com/soundcaptain_95?igsh=MThqbnN5NjUwYmJqdQ==/about#donate\">donate</a><br/><br/>" +
+                               "<a style='color:%1' href=\"https://www.instagram.com/soundcaptain_95?igsh=MThqbnN5NjUwYmJqdQ==\">user manual</a><br/>" +
+                               "<a style='color:%1' href=\"https://www.instagram.com/soundcaptain_95?igsh=MThqbnN5NjUwYmJqdQ==\">consulting</a><br/>" +
+                               "<a style='color:%1' href=\"https://www.instagram.com/soundcaptain_95?igsh=MThqbnN5NjUwYmJqdQ==\">trainings</a><br/>" +
+                               "<a style='color:%1' href=\"https://www.instagram.com/soundcaptain_95?igsh=MThqbnN5NjUwYmJqdQ==\">community</a><br/>"
                               ).arg(Material.accentColor)
                     textFormat: Text.RichText
                     horizontalAlignment: Text.AlignLeft
@@ -116,7 +116,7 @@ Popup {
 
                     cursorShape: Qt.PointingHandCursor
                     onClicked:  {
-                        Qt.openUrlExternally("https://opensoundmeter.com/qr");
+                        Qt.openUrlExternally("https://www.instagram.com/soundcaptain_95?igsh=MThqbnN5NjUwYmJqdQ==");
                     }
 
                     Image {

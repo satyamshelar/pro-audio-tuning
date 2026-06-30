@@ -64,7 +64,7 @@ Item {
                 Material.background: parent.Material.background
 
                 onClicked:  {
-                    Qt.openUrlExternally("https://opensoundmeter.com/api");
+                    Qt.openUrlExternally("https://www.instagram.com/soundcaptain_95?igsh=MThqbnN5NjUwYmJqdQ==");
                 }
             }
         }
