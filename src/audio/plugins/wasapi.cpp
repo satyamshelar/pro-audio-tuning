@@ -24,6 +24,7 @@
 #include <functiondiscoverykeys.h>
 #include <QThread>
 #include <QCoreApplication>
+#include <cmath>
 
 namespace audio {
 
