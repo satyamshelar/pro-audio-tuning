@@ -27,7 +27,7 @@ jobs:
          mingw32-make -j2
              mkdir package
          copy release\*.exe package\
-         windeployqt package\SoundCaptainTuningLabPro.exe
+         windeployqt --qmldir qml package\SoundCaptainTuningLabPro.exe
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
