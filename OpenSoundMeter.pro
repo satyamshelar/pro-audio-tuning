@@ -342,6 +342,7 @@ win32 {
         src/audio/plugins/wasapi.cpp
 
     LIBS += -lole32
+    LIBS += -lksuser
 
     exists($$PWD/../asiosdk/*) {
         DEFINES += USE_ASIO
