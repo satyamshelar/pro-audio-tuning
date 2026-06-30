@@ -150,8 +150,10 @@ ApplicationWindow {
         visible: applicationAppearance.showAboutOnStartup
     }
 
-    Updater {
-        id: update
+    DelayCalculator {
+    id: delayCalculator
+    anchors.centerIn: parent
+    visible: false
     }
 
     FiberBasePanel {
@@ -189,8 +191,8 @@ ApplicationWindow {
         selectExisting: false
         title: qsTr("Please choose a file's name")
         folder: (typeof shortcuts !== 'undefined' ? shortcuts.home : Filesystem.StandardFolder.Home)
-        defaultSuffix: "osm"
-        nameFilters: ["Sound Captain Project (*.osm)"]
+        defaultSuffix: "scp"
+        nameFilters: ["Sound Captain Project (*.scp)"]
         onAccepted: sourceList.save(saveDialog.fileUrl);
     }
 
@@ -199,8 +201,8 @@ ApplicationWindow {
         selectExisting: true
         title: qsTr("Please choose a file's name")
         folder: (typeof shortcuts !== 'undefined' ? shortcuts.home : Filesystem.StandardFolder.Home)
-        defaultSuffix: "osm"
-        nameFilters: ["Sound Captain Project (*.osm)"]
+        defaultSuffix: "scp"
+        nameFilters: ["Sound Captain Project (*.scp)"]
         onAccepted: function() {
             applicationWindow.properiesbar.clear();
             if (!sourceList.load(openDialog.fileUrl)) {
