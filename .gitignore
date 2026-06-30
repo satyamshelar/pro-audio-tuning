@@ -83,3 +83,4 @@ PVS-Studio.cfg
 *.PVS-Studio.cfg
 .pvsconfig
 pvs.log*
+.github/workflows/windows-build.yml.rtf
