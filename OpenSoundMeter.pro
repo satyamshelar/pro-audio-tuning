@@ -341,7 +341,7 @@ win32 {
     SOURCES += \
         src/audio/plugins/wasapi.cpp
 
-    LIBS += lole32
+    LIBS += -lole32
 
     exists($$PWD/../asiosdk/*) {
         DEFINES += USE_ASIO
