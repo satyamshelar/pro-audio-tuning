@@ -150,11 +150,7 @@ ApplicationWindow {
         visible: applicationAppearance.showAboutOnStartup
     }
 
-    DelayCalculator {
-    id: delayCalculator
-    anchors.centerIn: parent
-    visible: false
-    }
+    
 
     FiberBasePanel {
         id: licensePanel
